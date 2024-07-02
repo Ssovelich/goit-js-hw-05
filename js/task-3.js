@@ -1,11 +1,11 @@
 const sortByDescendingFriendCount = (users) => {
     
-    const amountFriends = users.map(user => user.friends);
-    console.log(amountFriends);
-    const sortedName = users.toSorted((a, b) => b.friends.lenght - a.friends.lenght)
-    console.log(sortedName); 
+    let sortedName = [];
+    for (const user of users) {
+        sortedName = users.toSorted((a, b) => b.friends.length - a.friends.length)
+    }
+    return sortedName; 
 }
-
 
 
 console.log(
