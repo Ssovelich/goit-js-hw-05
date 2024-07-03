@@ -37,15 +37,13 @@ const clients = [
 ];
 
 const getTotalBalanceByGender = (users, gender) => {
-    let sum = 0;
     const balanceUsers = users
        .filter(user => user.gender === gender)
-       .map(user => user.balance)
-   
-    for (let balance of balanceUsers) {
-        sum += balance
-    }
-        return sum
+       .reduce((total, user) => {
+           return total + user.balance;
+        }, 0);
+       
+        return balanceUsers; 
 }
 
 
